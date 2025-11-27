@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-// import './Mainevent.css';
-
+"use client";
+import { useState } from 'react';
 const EventsPage = () => {
   // State for selected events
   const [selectedUpcomingEvent, setSelectedUpcomingEvent] = useState(null);
@@ -137,7 +136,6 @@ const EventsPage = () => {
           <div className="section-divider"></div>
           <p>Join us for these exciting upcoming events in our community</p>
         </div>
-        
         <div className="events-grid">
           {upcomingEvents.map(event => (
             <div key={event.id} className="event-card">
@@ -189,7 +187,7 @@ const EventsPage = () => {
         <div className="section-header">
           <h2>Our Celebrations</h2>
           <div className="section-divider"></div>
-          <p>Relive the memorable events we've organized for our community</p>
+          <p>Relive the memorable events we{"'"}ve organized for our community</p>
         </div>
         
         <div className="events-grid">
@@ -258,7 +256,7 @@ const EventsPage = () => {
       {/* CTA Section */}
       <section className="events-cta">
         <h2>Have an Event Idea?</h2>
-        <p>We're always looking for new ways to bring our community together. Share your event ideas with us!</p>
+        <p>We{"'"}re always looking for new ways to bring our community together. Share your event ideas with us!</p>
         <button className="cta-button">Suggest an Event</button>
       </section>
     </div>

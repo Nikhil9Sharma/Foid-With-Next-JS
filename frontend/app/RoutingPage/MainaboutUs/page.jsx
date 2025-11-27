@@ -17,15 +17,10 @@ const AboutUs = () => {
             <h2>Our Mission</h2>
             <div className="divider"></div>
             <p>
-              Friend of Indian Diaspora is dedicated to connecting, supporting, and empowering 
-              the Indian community living in Germany. We serve as a bridge between cultures, 
-              helping our members navigate life in Germany while maintaining strong ties to 
-              our Indian heritage.
+              Friend of Indian Diaspora is dedicated to connecting, supporting, and empowering the Indian community living in Germany. We serve as a bridge between cultures, helping our members navigate life in Germany while maintaining strong ties to our Indian heritage.
             </p>
             <p>
-              Our organization fosters people-to-people connections, provides essential 
-              information, and creates opportunities for cooperation and mutual assistance 
-              within our community.
+              Our organization fosters people-to-people connections, provides essential information, and creates opportunities for cooperation and mutual assistance within our community.
             </p>
           </div>
           <div className="image-content">
@@ -122,13 +117,12 @@ const AboutUs = () => {
       {/* CTA Section */}
       <section className="about-cta">
         <h2>Join Our Growing Community</h2>
-        <p>Whether you're new to Germany or have been here for years, we welcome you to connect with fellow Indians across the country.</p>
+        <p>Whether you{"'"}re new to Germany or have been here for years, we welcome you to connect with fellow Indians across the country.</p>
         <div className="cta-buttons">
           <button className="primary-btn" style={{display:"none"}}>Become a Member</button>
           <button className="secondary-btn" style={{display:"none"}}>Contact Us</button>
         </div>
       </section>
-      
     </div>
   );
 };

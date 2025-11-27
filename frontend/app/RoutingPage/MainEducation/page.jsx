@@ -1,4 +1,5 @@
 "use client";
+
 const DiasporaPage = () => {
   return (
     <div className="diaspora-container">

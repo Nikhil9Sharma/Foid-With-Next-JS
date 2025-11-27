@@ -1,4 +1,5 @@
 "use client";
+
 export default function JoiningForm({ onClose }) { // Added onClose prop
   const [formData, setFormData] = useState({
     firstName: '',

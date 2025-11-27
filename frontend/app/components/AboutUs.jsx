@@ -1,5 +1,6 @@
 
 "use client";
+
 import { PiNotebookFill } from "react-icons/pi";
 import { FaEarthEurope } from "react-icons/fa6";
 import { RiGraduationCapFill } from "react-icons/ri";
