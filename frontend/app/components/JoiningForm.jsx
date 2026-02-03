@@ -23,13 +23,10 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     try {
       const response = await axios.post('http://localhost:3000/api/users', formData);
-      
       alert('Form submitted successfully!');
       console.log('Server response:', response.data);
-      
       // Reset form
       setFormData({
         firstName: '',
@@ -42,7 +39,6 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
         email: '',
         phone: ''
       });
-      
       // Close the form - make sure this is being called
       if (onClose && typeof onClose === 'function') {
         onClose(); // This should close the form
@@ -56,33 +52,30 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
       alert('Error: ' + message);
     }
   };
-  
 
   return (
     <div className="form-full-area">
       <div className="form-container">
         <h2 className="form-title">Join Us</h2>
         <form onSubmit={handleSubmit} className="joining-form">
-          
           {/* Name Section */}
           <div className="form-section">
             <div className="form-group">
               <label htmlFor="firstName" className="form-label">First Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="firstName"
                 id="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="form-input" 
+                className="form-input"
                 placeholder="Enter your first name"
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="lastName" className="form-label">Last Name</label>
-              <input 
+              <input
                 type="text"
                 name="lastName"
                 id="lastName"
@@ -94,12 +87,11 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
               />
             </div>
           </div>
-
           {/* Personal Details */}
           <div className="form-section">
             <div className="form-group">
               <label htmlFor="dob" className="form-label">Date of Birth</label>
-              <input 
+              <input
                 type="date"
                 name="dob"
                 id="dob"
@@ -109,10 +101,9 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="address" className="form-label">Address</label>
-              <input 
+              <input
                 type="text"
                 name="address"
                 id="address"
@@ -124,12 +115,11 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
               />
             </div>
           </div>
-
           {/* Location */}
           <div className="form-section form-row">
             <div className="form-group">
               <label htmlFor="state" className="form-label">State</label>
-              <input 
+              <input
                 type="text"
                 name="state"
                 id="state"
@@ -139,10 +129,9 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="zipCode" className="form-label">Zip / Pin Code</label>
-              <input 
+              <input
                 type="text"
                 name="zipCode"
                 id="zipCode"
@@ -152,10 +141,9 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="country" className="form-label">Country</label>
-              <input 
+              <input
                 type="text"
                 name="country"
                 id="country"
@@ -166,12 +154,11 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
               />
             </div>
           </div>
-
           {/* Contact */}
           <div className="form-section">
             <div className="form-group">
               <label htmlFor="email" className="form-label">Email ID</label>
-              <input 
+              <input
                 type="email"
                 name="email"
                 id="email"
@@ -182,10 +169,9 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
                 required
               />
             </div>
-            
             <div className="form-group">
               <label htmlFor="phone" className="form-label">Mobile No.</label>
-              <input 
+              <input
                 type="tel"
                 name="phone"
                 id="phone"
@@ -197,7 +183,6 @@ export default function JoiningForm({ onClose }) { // Added onClose prop
               />
             </div>
           </div>
-
           <button type="submit" className="submit-button" >
             Submit
           </button>

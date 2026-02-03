@@ -2,7 +2,7 @@
 import {useState} from "react";
 import { VscOrganization } from "react-icons/vsc";
 
-import { Link } from 'react-router-dom';
+import { Link } from 'next/link';
 
 function LearnSection() {
     const [activeButton, setActiveButton] = useState(null); // State to track which button is active

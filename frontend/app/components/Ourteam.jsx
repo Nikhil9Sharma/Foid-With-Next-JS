@@ -1,7 +1,7 @@
 "use client";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaUsersLine } from "react-icons/fa6";
-
+import Image from "next/image";
 const Ourteam = () => {
   const teamData = [
     {
@@ -70,17 +70,16 @@ const Ourteam = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quia sint quod aspernatur.
           </p>
         </div>
-        
         <div className="cards-container">
           {teamData.map((card) => (
             <div className="card" key={card.id}>
               <div className="card-image-container">
-                <img  
+                <img
                   src={card.image}
                   alt={card.title}
                   className="card-image"
                   onError={(e) => {
-                    e.target.onerror = null; 
+                    e.target.onerror = null;
                     e.target.src = 'https://via.placeholder.com/200';
                   }}
                 />

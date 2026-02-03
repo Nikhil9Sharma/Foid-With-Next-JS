@@ -33,9 +33,9 @@ const Event = () => {
     // Format date for display
     const formatDate = (dateString) => {
         const date = new Date(dateString);
-        const options = { 
-            month: 'short', 
-            day: 'numeric', 
+        const options = {
+            month: 'short',
+            day: 'numeric',
             year: 'numeric',
             weekday: 'short'
         };
@@ -55,20 +55,20 @@ const Event = () => {
         <section className="event-section" aria-labelledby="events-heading">
             <div className="event-container">
                 <h2 id="events-heading" className="section-heading">
-                    
+
                     Upcoming Events
                 </h2>
-                
+
                 <div className="event-grid">
                     {eventData.map((event) => {
                         const { day, month } = getDateBadge(event.date);
-                        
+
                         return (
                             <article className="event-card" key={event.id}>
                                 <div className="event-image-container">
-                                    <img 
-                                        src={event.img} 
-                                        alt={event.title} 
+                                    <img
+                                        src={event.img}
+                                        alt={event.title}
                                         className="event-image"
                                         onError={(e) => {
                                             e.target.onerror = null;
@@ -96,7 +96,7 @@ const Event = () => {
                                             </svg>
                                             {event.location}
                                         </span>
-                                        
+
                                         <a href={event.link} className="event-link" aria-label={`Register for ${event.title}`}>
                                             Join Now
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">

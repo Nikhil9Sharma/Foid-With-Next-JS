@@ -1,8 +1,11 @@
 
 "use client";
+import '../Styles/Navbar.css';
 import { useState } from 'react';
 import { FiAlignJustify, FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import Link  from 'next/link';
+import Image from 'next/image';
+import LogoImage from '../../public/Assets/logo1.png'
 
 const dummyUser = {
   isLoggedIn: false,
@@ -21,32 +24,36 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logoarea">
-        <img src="./foid-assets/logo1.png" alt="Tikiton Logo" />
+        <Image
+          src={LogoImage}
+          alt="Logo"
+          width={50}
+          height={50} >
+        </Image>
         <div className="CompanyName">
           <p className='Name'>FOID</p>
-          {/* <p className='slogan'>Tickets Makes Easy</p> */}
         </div>
       </div>
 
       <div className={`menuarea ${menuOpen ? 'active' : ''}`}>
         <ul>
           <li>
-            <Link to={"/"} onClick={closeMenu}>
+            <Link href={"/"} onClick={closeMenu}>
               <button className="btn-primary">Home</button>
             </Link>
           </li>
           <li>
-            <Link to="/MainEducation" onClick={closeMenu}>
+            <Link href="/MainEducation" onClick={closeMenu}>
               <button className="btn-primary">Education</button>
             </Link>
           </li>
           <li>
-            <Link to="/Mainevent" onClick={closeMenu}>
+            <Link href="/Mainevent" onClick={closeMenu}>
               <button className="btn-primary">Events</button>
             </Link>
           </li>
           <li>
-            <Link to="/MainaboutUs" onClick={closeMenu}>
+            <Link href="/MainaboutUs" onClick={closeMenu}>
               <button className="btn-primary">About</button>
             </Link>
           </li>
