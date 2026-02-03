@@ -6,21 +6,22 @@ import { FiAlignJustify, FiX } from 'react-icons/fi';
 import Link  from 'next/link';
 import Image from 'next/image';
 import LogoImage from '../../public/Assets/logo1.png'
-
+import Profilepic from "../../public/Assets/userImg.jpg";
 const dummyUser = {
   isLoggedIn: false,
   // toggle to true to simulate logged-in state
   username: "JohnDoe",
-  profilePic: "./foid-assets/userImg.jpg"
+  profilePic: {Profilepic},
 };
 
 const Navbar = () => {
+  const [AccountBtnStatus, setAccountBtnStatus] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const user = dummyUser;
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
-
+  const toggleAccountBtn = () => setAccountBtnStatus(!AccountBtnStatus);
   return (
     <nav className="navbar">
       <div className="logoarea">
@@ -62,13 +63,15 @@ const Navbar = () => {
         <div className='loginarea'>
           {user.isLoggedIn ? (
             <div className="profile">
-              <img src={user.profilePic} alt="Profile" className="profile-pic" />
+              <Image src={user.profilePic} alt="Profile" className="profile-pic" ></Image>
               <span className="username">{user.username}</span>
             </div>
           ) : (
             <>
-              <button className="btn btn-primary">Login</button>
-              <button className="btn btn-outline-primary">Sign Up</button>
+            <div className='form-open-button-area'>
+              <button className="btn form-open-button" id="login-page-open-btn" >Login</button>
+              <button className="btn form-open-button" id="signup-page-open-btn">Sign Up</button>
+            </div>
             </>
           )}
         </div>

@@ -160,7 +160,10 @@ body {
   color: var(--primary);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.form-open-button-area {
+  display: flex;
+  gap: 10px;
+}
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .navbar {
