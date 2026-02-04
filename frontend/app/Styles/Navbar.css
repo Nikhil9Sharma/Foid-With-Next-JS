@@ -45,6 +45,13 @@
 body {
   padding-top: 70px;
 }
+.nav-link {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
 
 .navbar {
   display: flex;
@@ -264,5 +271,64 @@ body {
   .username {
     display: block;
     font-size: 1.1rem;
+  }
+}
+/* for Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .menuarea {
+    width: 60%;
+  }
+
+  .menuarea ul li button {
+    font-size: 1.05rem;
+  }
+
+  .account-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* for Laptop */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .menuBtn {
+    display: none;
+  }
+
+  .menuarea {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    box-shadow: none;
+    padding-top: 0;
+  }
+
+  .menuarea ul {
+    flex-direction: row;
+  }
+
+  .loginarea {
+    margin-left: 20px;
+  }
+}
+
+/* for large screen */
+@media screen and (min-width: 1201px) {
+  .navbar {
+    padding: 12px 60px;
+  }
+
+  .menuarea ul {
+    gap: 30px;
+  }
+
+  .menuarea ul li button {
+    font-size: 1.1rem;
+  }
+
+  .account-btn {
+    font-size: 1.05rem;
+    padding: 10px 18px;
   }
 }
