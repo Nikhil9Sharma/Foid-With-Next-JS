@@ -1,84 +1,75 @@
-
 "use client";
-import '../Styles/Navbar.css';
-import { useState } from 'react';
-import { FiAlignJustify, FiX } from 'react-icons/fi';
-import Link  from 'next/link';
-import Image from 'next/image';
-import LogoImage from '../../public/Assets/logo1.png'
+
+import "../Styles/Navbar.css";
+import { useState } from "react";
+import { FiAlignJustify, FiX } from "react-icons/fi";
+import Link from "next/link";
+import Image from "next/image";
+
+import LogoImage from "../../public/Assets/logo1.png";
 import Profilepic from "../../public/Assets/userImg.jpg";
+
+// dummy auth data
 const dummyUser = {
-  isLoggedIn: false,
-  // toggle to true to simulate logged-in state
+  isLoggedIn: false, // change to true to test logged-in state
   username: "JohnDoe",
-  profilePic: {Profilepic},
+  profilePic: Profilepic,
 };
 
 const Navbar = () => {
-  const [AccountBtnStatus, setAccountBtnStatus] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const user = dummyUser;
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuOpen(false);
-  const toggleAccountBtn = () => setAccountBtnStatus(!AccountBtnStatus);
+
   return (
     <nav className="navbar">
+      {/* Logo */}
       <div className="logoarea">
-        <Image
-          src={LogoImage}
-          alt="Logo"
-          width={50}
-          height={50} >
-        </Image>
-        <div className="CompanyName">
-          <p className='Name'>FOID</p>
-        </div>
+        <Image src={LogoImage} alt="Logo" width={45} height={45} />
+        <p className="Name">FOID</p>
       </div>
 
-      <div className={`menuarea ${menuOpen ? 'active' : ''}`}>
+      {/* Menu */}
+      <div className={`menuarea ${menuOpen ? "active" : ""}`}>
         <ul>
           <li>
-            <Link href={"/"} onClick={closeMenu}>
-              <button className="btn-primary">Home</button>
-            </Link>
+            <Link href="/" onClick={closeMenu}><button>Home</button></Link>
           </li>
           <li>
-            <Link href="/MainEducation" onClick={closeMenu}>
-              <button className="btn-primary">Education</button>
-            </Link>
+            <Link href="/MainEducation" onClick={closeMenu}><button>Education</button></Link>
           </li>
           <li>
-            <Link href="/Mainevent" onClick={closeMenu}>
-              <button className="btn-primary">Events</button>
-            </Link>
+            <Link href="/Mainevent" onClick={closeMenu}><button>Events</button></Link>
           </li>
           <li>
-            <Link href="/MainaboutUs" onClick={closeMenu}>
-              <button className="btn-primary">About</button>
-            </Link>
+            <Link href="/MainaboutUs" onClick={closeMenu}><button>About</button></Link>
           </li>
         </ul>
 
-        <div className='loginarea'>
+        {/* Account Button (ONLY ONE) */}
+        <div className="loginarea">
           {user.isLoggedIn ? (
-            <div className="profile">
-              <Image src={user.profilePic} alt="Profile" className="profile-pic" ></Image>
-              <span className="username">{user.username}</span>
-            </div>
+            <button className="account-btn">
+              <Image
+                src={user.profilePic}
+                alt="Profile"
+                width={32}
+                height={32}
+                className="profile-pic"
+              />
+              <span>{user.username}</span>
+            </button>
           ) : (
-            <>
-            <div className='form-open-button-area'>
-              <button className="btn form-open-button" id="login-page-open-btn" >Login</button>
-              <button className="btn form-open-button" id="signup-page-open-btn">Sign Up</button>
-            </div>
-            </>
+            <button className="account-btn">
+              Login
+            </button>
           )}
         </div>
       </div>
-
-      <div className='menuBtn' onClick={toggleMenu}>
-        {menuOpen ? <FiX size={24} /> : <FiAlignJustify size={24} />}
+      <div className="menuBtn" onClick={toggleMenu}>
+        {menuOpen ? <FiX size={26} /> : <FiAlignJustify size={26} />}
       </div>
     </nav>
   );
