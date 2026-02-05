@@ -1,6 +1,6 @@
 "use client";
 import "../../Styles/Register.css";
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Register() {
     const [email, setEmail] = useState('');

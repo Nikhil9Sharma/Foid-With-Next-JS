@@ -29,7 +29,6 @@ const Event = () => {
             link: 'https://www.youtube.com/@foidofficialyt',
         }
     ];
-
     // Format date for display
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -41,7 +40,6 @@ const Event = () => {
         };
         return date.toLocaleDateString('en-US', options);
     };
-
     // Extract day and month for badge
     const getDateBadge = (dateString) => {
         const date = new Date(dateString);
@@ -50,19 +48,15 @@ const Event = () => {
             month: date.toLocaleString('default', { month: 'short' })
         };
     };
-
     return (
         <section className="event-section" aria-labelledby="events-heading">
             <div className="event-container">
                 <h2 id="events-heading" className="section-heading">
-
                     Upcoming Events
                 </h2>
-
                 <div className="event-grid">
                     {eventData.map((event) => {
                         const { day, month } = getDateBadge(event.date);
-
                         return (
                             <article className="event-card" key={event.id}>
                                 <div className="event-image-container">
@@ -96,8 +90,7 @@ const Event = () => {
                                             </svg>
                                             {event.location}
                                         </span>
-
-                                        <a href={event.link} className="event-link" aria-label={`Register for ${event.title}`}>
+                                            <a href={event.link} className="event-link" aria-label={`Register for ${event.title}`}>
                                             Join Now
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
