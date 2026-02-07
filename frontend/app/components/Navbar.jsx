@@ -63,7 +63,7 @@ const Navbar = () => {
             </button>
           ) : (
             <button className="account-btn">
-              Login
+              <Link href="/Login">Login / Register</Link>
             </button>
           )}
         </div>

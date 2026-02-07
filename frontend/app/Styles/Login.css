@@ -1,0 +1,98 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Page Wrapper */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 20px;
+}
+
+/* Login Box */
+.login-box {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Forgot password */
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #667eea;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.login-btn,
+.switch-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-btn {
+  background: #667eea;
+  color: #fff;
+}
+
+.switch-btn {
+  background: #eee;
+}
+
+/* Success Message */
+.success-msg {
+  background: #e6fffa;
+  color: #065f46;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .login-box {
+    max-width: 450px;
+  }
+}
+
+/* Large Screens (TV / Monitor) */
+@media (min-width: 1200px) {
+  .login-box {
+    max-width: 500px;
+    padding: 40px;
+  }
+}

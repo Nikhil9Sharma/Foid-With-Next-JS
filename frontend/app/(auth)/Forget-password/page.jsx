@@ -1,25 +1,62 @@
 "use client";
-import '../../Styles/Forget-password.css';
+
+import { useState } from "react";
+import "../../Styles/Forget-password.css";
 
 export default function ForgetPassword() {
-return (
-    <div className="forget-password-container">
-        <h2 className="forget-password-heading">Forgot Your Password?</h2>
-        <p className="forget-password-instruction">
-            Enter your email address below, and we{"'"}ll send you instructions to reset your password.
+  // Store input value
+  const [userInput, setUserInput] = useState("");
+
+  // Store success message
+  const [successMessage, setSuccessMessage] = useState("");
+
+  // Handle confirm button
+  const handleConfirm = (e) => {
+    e.preventDefault();
+
+    if (!userInput) {
+      alert("Please enter Email / Mobile / User ID");
+      return;
+    }
+
+    // Simulate successful password change
+    setSuccessMessage(
+      `Password changed successfully for ${userInput}`
+    );
+
+    // Clear input after success
+    setUserInput("");
+  };
+
+  return (
+    <div className="fp-container">
+      <form className="fp-form" onSubmit={handleConfirm}>
+        <h2>Forget Password</h2>
+
+        <p className="fp-text">
+          Enter your <strong>Email / Mobile Number / User ID</strong>
         </p>
-        <form className="forget-password-form">
-            <label htmlFor="email" className="forget-password-label">Email Address:</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                className="forget-password-input"
-                placeholder="Enter your email"
-                required
-            />
-            <button type="submit" className="forget-password-submit-button">Send Reset Instructions</button>
-        </form>
+
+        {/* Success Alert */}
+        {successMessage && (
+          <div className="fp-success">
+            ✅ <strong>{successMessage}</strong>
+          </div>
+        )}
+
+        {/* Input */}
+        <input
+          type="text"
+          placeholder="Email / Mobile / User ID"
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+        />
+
+        {/* Button */}
+        <button type="submit" className="fp-btn">
+          Confirm
+        </button>
+      </form>
     </div>
-);
+  );
 }
