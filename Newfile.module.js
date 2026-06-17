@@ -1,0 +1,1 @@
+yo.model.js
